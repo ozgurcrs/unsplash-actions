@@ -5,7 +5,7 @@ import { useSearchImages } from "./hooks/useSearchImages";
 import { PluginInitContext } from "./context/PluginInitContext";
 import { Cards } from "./components/Cards";
 import { useFetchImages } from "./hooks/useFetchImage";
-import { ApiStatus, Images } from "./models";
+import { Images } from "./models";
 
 export const App: FC = () => {
   const [searchText, setSearchText] = useState<string>("");
