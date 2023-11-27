@@ -24,6 +24,6 @@ jobs:
           npm install
 
       - name: Build and Deploy to Vercel
-        run: npx vercel --prod
+        run: npx vercel --prod --yes
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
