@@ -25,5 +25,5 @@ jobs:
         run: npx vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          REACT_APP_ACCESS_KEY: &client_id=Zop7DwqKG3gScZh43Tm4AwAdGVRYb_AXjAJXm7TDtpU
-          REACT_APP_BASE_URL: https://api.unsplash.com
+          REACT_APP_ACCESS_KEY: ${{ secrets.CLIENT_ID }}
+          REACT_APP_BASE_URL: ${{ BASE_URL }}
