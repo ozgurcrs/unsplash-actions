@@ -7,8 +7,6 @@ on:
 
 env:
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-  REACT_APP_ACCESS_KEY: ${{ secrets.CLIENT_ID }}
-  REACT_APP_BASE_URL: ${{ secrets.BASE_URL }}
 
 jobs:
   build:
@@ -25,6 +23,11 @@ jobs:
 
       - name: Clean and Install Dependencies
         run: npm install
+
+      - name: Set Environment Variables
+        run: |
+          echo "REACT_APP_ACCESS_KEY=${{ secrets.CLIENT_ID }}" >> .env.local
+          echo "REACT_APP_BASE_URL=${{ secrets.BASE_URL }}" >> .env.local
 
       - name: Build and Deploy to Vercel
         run: npx vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }} --env .env
