@@ -18,10 +18,12 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Clean and Install Dependencies
+        run: |
+          rm -rf node_modules
+          npm install
 
       - name: Build and Deploy to Vercel
-        run: yes Y |npx vercel --prod
+        run: npx vercel --prod
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
