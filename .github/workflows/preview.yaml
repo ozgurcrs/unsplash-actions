@@ -26,4 +26,4 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           REACT_APP_ACCESS_KEY: ${{ secrets.CLIENT_ID }}
-          REACT_APP_BASE_URL: ${{ BASE_URL }}
+          REACT_APP_BASE_URL: ${{ secrets.BASE_URL }}
