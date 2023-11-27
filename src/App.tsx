@@ -11,6 +11,7 @@ export const App: FC = () => {
   const [searchText, setSearchText] = useState<string>("");
   const { images } = useFetchImages();
   const [allImages, setAllImages] = useState<Images[]>(images);
+
   const { fetchSearchImages } = useSearchImages();
 
   const { searchedImages } = useSearchImages();
